@@ -1,5 +1,9 @@
-import requests
+import os
 
+import requests
+from dotenv import load_dotenv
+
+load_dotenv()
 
 def getIP():
     response = requests.get("https://api64.ipify.org?format=json")
@@ -8,7 +12,7 @@ def getIP():
 
 def getCity():
     ip_address = getIP()
-    api_key = "dca4cf3454984bd39fc316bb03003e31"
+    api_key = os.getenv("city_api_key")
     response = requests.get(f"https://ipgeolocation.abstractapi.com/v1/?api_key={api_key}&ip_address={getIP()}")
     data = response.json()
     return data["city"]
@@ -16,7 +20,7 @@ def getCity():
 
 def getWeather(city=getCity()):
     url = "https://api.openweathermap.org/data/2.5/weather?"
-    api_key = "81822642aa6a5bda9a5420fd08af6c23"
+    api_key = os.getenv("weather_api_key")
     full_url = url + "q=" + city + "&appid=" + api_key + "&units=imperial"
 
     response = requests.get(full_url)
