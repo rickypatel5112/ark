@@ -1,0 +1,162 @@
+/* Set default styles for the entire page */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  /* Style the header */
+  header {
+    background-color: #1d1d1d;
+    color: #fff;
+    padding: 10px;
+  }
+
+  body {
+    background-color: #141414;
+  }
+  
+  
+  /* Style the navigation menu */
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav ul li {
+    display: inline-block;
+  }
+  
+  nav ul li a {
+    display: block;
+    padding: 10px;
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  /* Style the main content area */
+  main {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+  }
+  
+  /* Style the page title */
+  h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-align: center;
+  }
+  
+  /* Style the paragraph text */
+  p {
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    color: #d1d1d1;
+    text-align: center;
+  }
+  
+  /* Style the footer */
+  footer {
+    background-color: #1d1d1d;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  /* Add some futuristic and artificial intelligence-inspired design elements */
+  header {
+    background-image: url('https://i.imgur.com/7kWpz9R.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  
+  nav ul li a {
+    font-size: 18px;
+    letter-spacing: 2px;
+    transition: all 0.2s ease;
+  }
+  
+  nav ul li a:hover {
+    background-color: #03a9f4;
+    color: #fff;
+  }
+  
+  .search-bar{
+    width: 50%;
+    background: rgb(255, 255, 255, 0.2) ;
+    display: flex;
+    align-items: center;
+    border-radius: 60px;
+    padding: 5px;
+    backdrop-filter: blur(4px) saturate(18);
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .search-bar input{
+    background: transparent;
+    flex: 1;
+    border: 0;
+    outline: none;
+    padding: 24px 20px;
+    font-size: 20px;
+    color: #cac7ff;
+  }
+
+  ::placeholder{
+    color: #cac7ff;
+  }
+
+  .search-bar button img{
+    width: 25px;
+  }
+
+  .search-bar button{
+    border: 0;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    background: #58629b;
+    cursor: pointer;
+  }
+
+  #text-output, #audio-output{
+    color: white;
+  }
+
+  .center{
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+    width:auto;
+    color: white;
+    text-align: center;
+  }
+
+  footer {
+    width: 100%;
+    background-image: none;
+    background-repeat: repeat;
+    background-attachment: scroll;
+    background-position: 0% 0%;
+    position: fixed;
+    bottom: 0pt;
+    left: 0pt;
+
+}   
+
+.footer_contents {
+
+    height:24px;
+    width: 1000px;
+    margin:auto;
+
+}

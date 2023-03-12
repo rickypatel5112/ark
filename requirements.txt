@@ -1,0 +1,15 @@
+requests
+pyttsx3
+speedtest
+os
+platform
+psutil
+SpeechRecognition
+bs4
+pytube
+pyjokes
+datetime
+speedtest
+flask
+flask_cors
+pyaudio
