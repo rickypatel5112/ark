@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="{{url_for('static', filename = 'style.css')}}" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <title>Commands List</title>
+  </head>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="{{url_for('home')}}">Home</a></li>
+        <li><a href="{{url_for('about')}}">About Team</a></li>
+        <li><a href="{{url_for('features')}}">Features</a></li>
+        <li><a href="{{url_for('commands')}}">Command List</a></li>
+      </ul>
+    </nav>
+  </header>
+  <body style="color: white;">
+    <h1 style="padding-top:1%;">Your Command is My Wish</h1>
+    <hr>
+    <h2 style="padding-bottom: 20px;padding-top: 1%; margin: 1%;">Are you tired of typing? Just give voice commands to Ark and let it take care of the rest! From opening popular websites like Google and YouTube to checking your network and weather information, Ark has got you covered. You can even ask Ark to tell you a joke or read the latest news headlines for you. Simply speak up and Ark will listen!</h2>
+    <h2 style="margin: 1%;">The commands/ keywords that you can give to Ark for a seamless experience are as follows:</h2>
+    <ul style="padding-left:3%">
+      <li><strong>Open Youtube</strong>: Opens Youtube in a new tab</li>
+      <li><strong>Search Youtube for [query]</strong>: Search Youtube for the given query given by You</li>
+      <li><strong>Open Google</strong>: Opens Google in a new tab</li>
+      <li><strong>Search Google for [query]</strong>: Search Google for the given query given by You</li>
+      <li><strong>Download speed</strong>: Get your download speed of the connected wifi network.</li>
+      <li><strong>Upload speed</strong>: Get your upload speed of the connected wifi network.</li>
+      <li><strong>Network speed</strong>: Get your network speed of the connected wifi network.</li>
+      <li><strong>Joke</strong>: Gives a random joke to the User (WARNING: the jokes are CS oriented)</li>
+      <li><strong>Show weather</strong>: Gives the current weather information of your city</li>
+      <li><strong>Weather in [city]</strong>: Fetches the current weather information for the city given</li>
+      <li><strong>News [num_articles]</strong>: Gets the latest news headlines for the user</li>
+    </ul>
+  </body>
+
+  <footer>
+    <p class="footer-contents">&copy; 2023 Ark. All Rights Reserved.</p>
+  </footer>
+</html>

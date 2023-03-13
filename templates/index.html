@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Ark - Personal Assistant</title>
+  <link rel="stylesheet" href="{{url_for('static', filename = 'style.css')}}" type="text/css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <script>
+    $(document).ready(function() {
+        $('#search-form').on('submit', function(onSubmit) {
+            onSubmit.preventDefault();
+            $.ajax({
+                type: 'POST',
+                url: '/text_input',
+                data: $('#search-form').serialize(),
+                success: function(response) {
+                  $('#text-output').html(response);
+                  // console.log("1")
+                  const audio = new Audio();
+                  // console.log("2")
+                  const audioUrl = "http://localhost:5000/audio"; 
+                  // console.log("3")
+                  fetch(audioUrl)
+                      .then(response => response.blob())
+                      .then(blob => {
+                          audio.src = URL.createObjectURL(blob);
+                          audio.autoplay = true;
+                          document.getElementById('audio-output').appendChild(audio);
+                          
+                      })
+                      .catch(error => console.log(error));
+
+                }
+            });
+        });
+    });
+</script>
+
+<script>
+  $(document).ready(function () {
+      $('#input-btn').click(function () {
+        document.getElementById('listening').innerHTML = "Listening.......";
+          $.ajax({
+              url: 'http://localhost:5000/audio_input',
+              type: 'GET',
+              
+              success: function (response) {
+                document.getElementById('listening').innerHTML ="";
+                  $('#text-output').html(response);
+
+                  const audio = new Audio();
+
+                  const audioUrl = "http://localhost:5000/audio"; 
+
+                  fetch(audioUrl)
+                      .then(response => response.blob())
+                      .then(blob => {
+                          audio.src = URL.createObjectURL(blob);
+                          audio.autoplay = true;
+                          document.getElementById('audio-output').appendChild(audio);
+                      })
+                      .catch(error => console.log(error));
+
+              },
+              error: function (error) {
+                  console.log(error);
+              }
+          });
+      });  
+  });
+</script>
+
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="{{url_for('home')}}">Home</a></li>
+        <li><a href="{{url_for('about')}}">About Team</a></li>
+        <li><a href="{{url_for('features')}}">Features</a></li>
+        <li><a href="{{url_for('commands')}}">Command List</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <h1>Welcome to Ark</h1>
+    <p>Your personal assistant for everything</p>
+    <img src="{{url_for('static', filename='microphone.png')}}" id="input-btn" class="center">
+    <div id="listening" class="center"></div>
+  </main>
+
+  <div class="container">
+      <form id = 'search-form' class="search-bar">
+      <input type="text" placeholder="Search...." name="text-input">
+      <button type="submit" id="input-btn"><img src="{{url_for('static', filename='search.jpg')}}"></button>
+    </form>
+
+    <div id="text-output" style="padding:1%;"></div>
+    <div id="audio-output" style="padding:1%;"></div>
+  </div>
+
+  <footer>
+    <p class="footer-contents">&copy; 2023 Ark. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>
